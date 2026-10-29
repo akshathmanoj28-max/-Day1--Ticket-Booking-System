@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b14" />
+  <title>NEBULA — Experiences, reimagined</title>
+  <meta name="description" content="Discover concerts, movies, experiences and more with NEBULA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="NEBULA home"><span class="brand-mark">✦</span> NEBULA<span class="brand-dot">.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#discover" class="nav-link active">Discover</a><a href="#experiences" class="nav-link">Experiences</a><a href="#how" class="nav-link">How it works</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="openSearch" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
+      <button class="wallet-button" id="walletButton"><span class="wallet-icon">▣</span><span>My tickets</span><span class="ticket-count" id="ticketCount">0</span></button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="discover">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT GREAT STORY STARTS HERE</div>
+        <h1>Life happens<br> <span class="gradient-text">out there.</span></h1>
+        <p class="hero-description">Find your people. Feel the moment. Book the experiences you'll talk about long after they're over.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#experiences">Explore experiences <span>↗</span></a><button class="button button-quiet" id="surpriseMe">✧ Surprise me</button></div>
+        <div class="hero-proof"><div class="avatar-stack"><span>J</span><span>A</span><span>M</span><span>+</span></div><div><strong>Made for moments</strong><small>Discover something unforgettable</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-poster">
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=85" alt="Crowd at a live concert" />
+          <div class="poster-overlay"></div>
+          <div class="poster-top"><span class="pill pill-live">● LIVE EXPERIENCE</span><span class="poster-index">01 / 04</span></div>
+          <div class="poster-bottom"><span class="poster-kicker">THE NIGHT IS YOURS</span><h2>Feel the<br>frequency.</h2><div class="poster-meta"><span>✦ Live music</span><span>◷ This weekend</span></div></div>
+        </div>
+        <div class="floating-card floating-card-top"><span class="floating-icon">✦</span><div><strong>Something electric</strong><small>is closer than you think.</small></div></div>
+        <div class="floating-card floating-card-bottom"><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span><div><strong>Good energy only</strong><small>Curated for your kind of night</small></div></div>
+      </div>
+      <div class="hero-bottom-line"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span><span>01 — 04</span></div>
+    </section>
+
+    <section class="search-section" aria-label="Find experiences">
+      <div class="search-shell">
+        <label class="search-field"><span class="field-icon">⌕</span><span class="field-content"><small>WHAT ARE YOU IN THE MOOD FOR?</small><input id="searchInput" type="search" placeholder="Artist, movie, experience..." autocomplete="off"></span></label>
+        <div class="search-divider"></div>
+        <label class="search-field location-field"><span class="field-icon">⌖</span><span class="field-content"><small>YOUR CITY</small><select id="cityFilter"><option value="all">All locations</option><option>Bengaluru</option><option>Mumbai</option><option>Delhi</option><option>Chennai</option><option>Hyderabad</option></select></span></label>
+        <button class="button button-primary search-submit" id="searchSubmit">Find experiences <span>↗</span></button>
+      </div>
+      <div class="quick-search"><span>Trending:</span><button data-trend="concert">Live music</button><button data-trend="movie">Movies</button><button data-trend="comedy">Comedy</button><button data-trend="workshop">Workshops</button></div>
+    </section>
+
+    <section class="section" id="experiences">
+      <div class="section-heading"><div><div class="eyebrow">THE GOOD STUFF</div><h2>Find your <span class="gradient-text">next thing.</span></h2><p class="section-subtitle">A little out of the ordinary. A lot worth remembering.</p></div><a class="text-link" href="#eventGrid">Explore all experiences <span>↗</span></a></div>
+      <div class="category-row" id="categoryRow">
+        <button class="category-chip selected" data-category="all"><span>✦</span> All experiences</button>
+        <button class="category-chip" data-category="concert"><span>♫</span> Concerts</button>
+        <button class="category-chip" data-category="movie"><span>▣</span> Movies</button>
+        <button class="category-chip" data-category="comedy"><span>☻</span> Comedy</button>
+        <button class="category-chip" data-category="workshop"><span>✳</span> Workshops</button>
+        <button class="category-chip" data-category="transit"><span>↗</span> Transit</button>
+      </div>
+      <div class="results-line"><span id="resultsCount">Showing curated picks</span><label>Sort by <select id="sortFilter"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="date">Soonest</option></select></label></div>
+      <div class="event-grid" id="eventGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><div class="empty-icon">⌕</div><h3>No matches just yet</h3><p>Try another search or reset your filters to explore more.</p><button class="button button-secondary" id="resetFilters">Reset filters</button></div>
+    </section>
+
+    <section class="feature-band" id="how">
+      <div class="feature-copy"><div class="eyebrow"><span class="live-dot"></span> BOOKING, WITHOUT THE BORING</div><h2>Less planning.<br><span class="gradient-text">More living.</span></h2><p>From the first spark of inspiration to the moment your ticket gets scanned, every detail is designed to keep you in the moment.</p><div class="feature-points"><div><span class="feature-check">✓</span><div><strong>Clear prices. No surprises.</strong><small>Know what you're paying before checkout.</small></div></div><div><span class="feature-check">✓</span><div><strong>Your tickets, always close.</strong><small>Find your bookings in one easy wallet.</small></div></div><div><span class="feature-check">✓</span><div><strong>Plans are better together.</strong><small>Share experiences with your favourite people.</small></div></div></div></div>
+      <div class="feature-visual"><div class="visual-glow"></div><div class="ticket-preview"><div class="ticket-top"><span class="brand mini-brand"><span class="brand-mark">✦</span> NEBULA</span><span class="ticket-type">ADMIT ONE</span></div><div class="ticket-art"><img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=900&q=85" alt="Concert stage lights"></div><div class="ticket-info"><span class="ticket-label">YOUR NEXT MEMORY</span><h3>Live in the moment.</h3><div class="ticket-details"><span>✦ Any experience</span><span>◷ Your chosen date</span></div></div><div class="ticket-perforation"><span></span><span></span></div><div class="ticket-footer"><span>YOUR NIGHT. YOUR STORY.</span><span class="fake-qr">▦</span></div></div><div class="floating-badge"><span>✧</span> Ready when you are</div></div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-orb"></div><div class="newsletter-content"><div class="eyebrow">THE GOOD STUFF, FIRST</div><h2>Make room for <span class="gradient-text">more.</span></h2><p>Get the latest drops, hidden gems, and experiences worth leaving the house for.</p><form id="newsletterForm"><input id="newsletterEmail" type="email" placeholder="Your email address" required><button class="button button-primary" type="submit">Keep me in the loop <span>↗</span></button></form><small id="newsletterMessage">No spam. Just plans worth making.</small></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#"><span class="brand-mark">✦</span> NEBULA<span class="brand-dot">.</span></a><span>Experiences that stay with you.</span><div class="footer-links"><a href="#discover">Discover</a><a href="#experiences">Experiences</a><a href="#how">About</a></div><span class="copyright">© 2026 NEBULA</span></footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop"></div>
+  <section class="modal hidden" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" data-close aria-label="Close">×</button><div id="modalContent"></div>
+  </section>
+  <section class="side-panel hidden" id="walletPanel" role="dialog" aria-modal="true" aria-labelledby="walletTitle">
+    <div class="panel-header"><div><div class="eyebrow">YOUR MOMENTS</div><h2 id="walletTitle">My tickets</h2></div><button class="modal-close" data-close aria-label="Close">×</button></div><div id="walletContent"></div>
+  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
